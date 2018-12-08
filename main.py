@@ -9,10 +9,7 @@ people = ["", "Jesus Christ", "Sam"]
 def detect_face(img):
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-    # load OpenCV face detector:
-    # LBP is fast but less accurate
-    # Haar is slow but more accurate
-    face_cascade = cv2.CascadeClassifier('cascade-files/lbpcascade_frontalface.xml')
+    face_cascade = cv2.CascadeClassifier('lbp.xml')
     faces = face_cascade.detectMultiScale(gray, scaleFactor=1.2, minNeighbors=5)
 
     if len(faces) == 0:
