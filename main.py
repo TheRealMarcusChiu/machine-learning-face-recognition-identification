@@ -2,7 +2,7 @@ import cv2
 import os
 import numpy as np
 
-people = ["", "Jesus Christ", "Sam"]
+people = ["", "Indian Guy", "Elvis"]
 
 
 # assumption: img contains 0 or 1 face
