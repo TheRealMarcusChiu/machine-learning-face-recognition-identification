@@ -80,11 +80,11 @@ face_identifier.train(faces, np.array(labels))
 
 def draw_rectangle(img, rect):
     (x, y, w, h) = rect
-    cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 2)
+    cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 5)
     
 
 def draw_text(img, text, x, y):
-    cv2.putText(img, text, (x, y), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 255, 0), 2)
+    cv2.putText(img, text, (x, y), cv2.FONT_HERSHEY_PLAIN, 5, (0, 255, 0), 4)
 
 
 def predict(test_img):
@@ -111,6 +111,10 @@ test_img2 = cv2.imread("test-data/test2.jpg")
 predicted_img1 = predict(test_img1)
 predicted_img2 = predict(test_img2)
 print("Prediction complete")
+
+# save images
+cv2.imwrite('output-data/1.jpg', predicted_img1)
+cv2.imwrite('output-data/2.jpg', predicted_img2)
 
 # display images
 cv2.imshow(people[1], cv2.resize(predicted_img1, (400, 500)))
