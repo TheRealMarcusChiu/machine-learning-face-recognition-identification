@@ -2,7 +2,9 @@ import cv2
 import os
 import numpy as np
 
-people = ["", "Indian Guy", "Elvis"]
+people = ["",
+          "Matt Damon",
+          "Emma Watson"]
 
 
 # assumption: img contains 0 or 1 face
@@ -59,6 +61,7 @@ def prepare_training_data(data_folder_path):
 
 print("Preparing data...")
 faces, labels = prepare_training_data("training-data")
+print(faces)
 print("Data prepared")
 
 print("Total faces: ", len(faces))
@@ -103,12 +106,13 @@ print("Predicting images...")
 test_img1 = cv2.imread("test-data/test1.jpg")
 test_img2 = cv2.imread("test-data/test2.jpg")
 
+
 # perform a prediction
 predicted_img1 = predict(test_img1)
 predicted_img2 = predict(test_img2)
 print("Prediction complete")
 
-# display both images
+# display images
 cv2.imshow(people[1], cv2.resize(predicted_img1, (400, 500)))
 cv2.imshow(people[2], cv2.resize(predicted_img2, (400, 500)))
 cv2.waitKey(0)
