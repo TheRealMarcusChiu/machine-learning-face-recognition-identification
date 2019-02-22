@@ -1,4 +1,4 @@
-### using python3
+### Python 3.6.4
 
 ### Install packages
 pip3 install numpy
